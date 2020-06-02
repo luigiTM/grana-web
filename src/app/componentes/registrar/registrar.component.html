@@ -1,0 +1,21 @@
+<app-barra-superior></app-barra-superior>
+<div class="formulario-registro">
+    <form (submit)="registrarUsuario($event)">
+        <mat-form-field appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input matInput required id="nome">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput required id="email">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Senha</mat-label>
+            <input type="password" matInput required id="senha">
+        </mat-form-field>
+        <br>
+        <input class="mat-raised-button" type="submit" value="Registrar">
+    </form>
+</div>
