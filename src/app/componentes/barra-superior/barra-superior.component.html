@@ -1,10 +1,11 @@
 <mat-toolbar>
     <span>
-        <a mat-button routerLink="/">Grana Web</a>
+        <button class="grana" mat-button routerLink="/">Grana Web</button>
     </span>
     <div class="espacador"></div>
-    <a mat-button routerLink="/entrar">Entrar</a>
-    <div>
-        <a mat-raised-button color="primary" routerLink="/registrar">Registrar</a>
-    </div>
+    <button class="entrar" *ngIf="mostrarEntrar" mat-button routerLink="/entrar">Entrar</button>
+    <button *ngIf="mostrarRegistrar" mat-raised-button color="primary" routerLink="/registrar">Registrar</button>
+    <button *ngIf="mostrarPerfil" mat-mini-fab color="primary" routerLink="/perfil">
+        <mat-icon>account_circle</mat-icon>
+    </button>
 </mat-toolbar>

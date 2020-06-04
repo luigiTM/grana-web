@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarraSuperiorComponent implements OnInit {
 
+  mostrarEntrar = true
+  mostrarRegistrar = true
+  mostrarPerfil = true
+
   constructor() { }
 
   ngOnInit(): void {

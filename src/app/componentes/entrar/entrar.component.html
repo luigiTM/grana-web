@@ -1,13 +1,13 @@
 <div class="formulario-entrar">
-    <form (submit)="autenticarUsuario($event)">
+    <form (ngSubmit)="autenticarUsuario(); $event.preventDefault()">
         <mat-form-field appearance="fill">
             <mat-label>Email</mat-label>
-            <input matInput required id="email">
+            <input [(ngModel)]="credenciais.email" name="email" matInput required>
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill">
             <mat-label>Senha</mat-label>
-            <input type="password" matInput required id="senha">
+            <input [(ngModel)]="credenciais.senha" name="senha" type="password" matInput required>
         </mat-form-field>
         <br>
         <input class="mat-raised-button" type="submit" value="Entrar">

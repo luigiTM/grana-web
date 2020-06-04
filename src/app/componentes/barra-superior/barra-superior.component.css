@@ -1,5 +1,13 @@
 mat-toolbar{
-    background-color: #4caf50;
+    background-color: black;
+}
+
+.grana{
+    color: green;
+}
+
+.entrar{
+    color: white;
 }
 
 .espacador{
