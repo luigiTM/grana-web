@@ -19,7 +19,7 @@ export class RegistrarComponent implements OnInit {
 
   grupoDeFormulario: FormGroup
 
-  constructor(public registrar: RegistrarService, public roteador: Router, public construtorDeFormulario: FormBuilder) {
+  constructor(private registrar: RegistrarService, private roteador: Router, private construtorDeFormulario: FormBuilder) {
     this.grupoDeFormulario = this.construtorDeFormulario.group({
       nome: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]],
       email: ['', [Validators.required, Validators.email]],

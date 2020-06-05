@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AutenticarService } from 'src/app/servicos/autenticar.service';
 import { Router } from '@angular/router';
 import { CredenciaisDTO } from 'src/app/modelo/credenciais.dto';
+import { UsuarioService } from 'src/app/servicos/modelo/usuario.service';
 
 @Component({
   selector: 'app-entrar',
@@ -16,7 +17,7 @@ export class EntrarComponent implements OnInit {
     senha: ""
   }
 
-  constructor(private autenticador: AutenticarService, private roteador: Router) { }
+  constructor(private autenticador: AutenticarService, private roteador: Router, private usuarioServico: UsuarioService) { }
 
   ngOnInit(): void {
   }
@@ -24,7 +25,6 @@ export class EntrarComponent implements OnInit {
   autenticarUsuario() {
     this.autenticador.autenticarUsuario(this.credenciais).subscribe(response => {
       this.autenticador.autorizouUsuario(response.headers.get('Authorization'))
-      //Logar usuario antes de redirecionar
       this.roteador.navigate(['inicio'])
     }, error => { })
   }

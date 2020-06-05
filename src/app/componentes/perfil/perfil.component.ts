@@ -13,7 +13,7 @@ export class PerfilComponent implements OnInit {
 
   usuario: UsuarioDTO
 
-  constructor(public armazenamento: ArmazenamentoService, public usuarioServico: UsuarioService, public roteador: Router) { }
+  constructor(private armazenamento: ArmazenamentoService, private usuarioServico: UsuarioService, private roteador: Router) { }
 
   ngOnInit(): void {
 

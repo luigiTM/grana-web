@@ -14,7 +14,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ErroInterceptador implements HttpInterceptor {
 
-    constructor(public armazenamento: ArmazenamentoService) { }
+    constructor(private armazenamento: ArmazenamentoService) { }
 
     intercept(
         request: HttpRequest<any>,

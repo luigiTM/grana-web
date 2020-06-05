@@ -1,0 +1,12 @@
+.novoGrana{
+    background-color: green;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.granas{
+    border: solid 2px;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-right: 10px;
+}

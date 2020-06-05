@@ -2,3 +2,8 @@
     padding-top: 50px;
     text-align: center;
 }
+
+.fundo{
+    background-image: url(src\assets\imagens\background.jpg);
+    height: 100vh;
+}

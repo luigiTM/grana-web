@@ -8,7 +8,7 @@ import { UsuarioDTO } from 'src/app/modelo/cliente.dto';
 })
 export class UsuarioService {
 
-  constructor(public http : HttpClient) { }
+  constructor(private http : HttpClient) { }
 
   buscarPorEmail(email : String) : Observable<UsuarioDTO>{
     return this.http.get<UsuarioDTO>(`api/usuario/email/${email}`)

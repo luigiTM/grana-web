@@ -10,7 +10,7 @@ import { JwtHelperService } from "@auth0/angular-jwt";
 })
 export class AutenticarService {
 
-  private ajudanteJwt : JwtHelperService = new JwtHelperService()
+  private ajudanteJwt: JwtHelperService = new JwtHelperService()
 
   constructor(private http: HttpClient, private armazenamento: ArmazenamentoService) { }
 
@@ -25,7 +25,7 @@ export class AutenticarService {
   }
 
   atualizarToken() {
-    return this.http.post("/api/autenticacao/atualizarToken",{},
+    return this.http.post("/api/autenticacao/atualizarToken", {},
       {
         observe: 'response',
         responseType: 'text'
@@ -37,7 +37,7 @@ export class AutenticarService {
     let tokenAutorizacao = valorAutorizacao.substring(7)
     let usuario: UsuarioLocal = {
       token: tokenAutorizacao,
-      email : this.ajudanteJwt.decodeToken(tokenAutorizacao).sub
+      email: this.ajudanteJwt.decodeToken(tokenAutorizacao).sub
     }
     this.armazenamento.setUsuarioLocal(usuario)
   }

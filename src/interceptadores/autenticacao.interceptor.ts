@@ -12,7 +12,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AutenticacaoInterceptador implements HttpInterceptor {
 
-    constructor(public armazenamento: ArmazenamentoService) {
+    constructor(private armazenamento: ArmazenamentoService) {
 
     }
 

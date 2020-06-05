@@ -23,6 +23,7 @@ import { ArmazenamentoService } from './servicos/armazenamento.service';
 import { UsuarioService } from './servicos/modelo/usuario.service';
 import { RegistrarService } from './servicos/registrar.service';
 import { AutenticacaoInterceptadorProvider } from 'src/interceptadores/autenticacao.interceptor';
+import { GranaService } from './servicos/modelo/grana.service';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { AutenticacaoInterceptadorProvider } from 'src/interceptadores/autentica
   providers: [RegistrarService,
     ArmazenamentoService,
     UsuarioService,
+    GranaService,
     AutenticacaoInterceptadorProvider,
     ErroInterceptadorProvider,
   ],
