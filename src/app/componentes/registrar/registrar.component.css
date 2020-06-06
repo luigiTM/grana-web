@@ -1,6 +1,15 @@
 .formulario-registro{
-    padding-top: 50px;
+    margin-top: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding-top: 30px;
     text-align: center;
+    border:solid 2px;
+    border-radius: 10px;
+}
+
+.mat-raised-button{
+    margin-bottom: 15px;
 }
 
 mat-form-field{

@@ -3,6 +3,7 @@ import { RegistrarService } from '../../servicos/registrar.service';
 import { Router } from '@angular/router';
 import { CredenciaisDTO } from 'src/app/modelo/credenciais.dto';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AutenticarService } from 'src/app/servicos/autenticar.service';
 
 @Component({
   selector: 'app-registrar',
@@ -19,7 +20,7 @@ export class RegistrarComponent implements OnInit {
 
   grupoDeFormulario: FormGroup
 
-  constructor(private registrar: RegistrarService, private roteador: Router, private construtorDeFormulario: FormBuilder) {
+  constructor(private autenticador : AutenticarService, private registrador: RegistrarService, private roteador: Router, private construtorDeFormulario: FormBuilder) {
     this.grupoDeFormulario = this.construtorDeFormulario.group({
       nome: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]],
       email: ['', [Validators.required, Validators.email]],
@@ -31,9 +32,13 @@ export class RegistrarComponent implements OnInit {
   }
 
   registrarUsuario() {
-    this.registrar.registrarUsuario(this.grupoDeFormulario.value).subscribe(response => {
-      //logar antes de redirecionar, tem que pegar o token
-      this.roteador.navigate(['inicio'])
+    this.registrador.registrarUsuario(this.grupoDeFormulario.value).subscribe(response => {
+     this.autenticador.autenticarUsuario(this.grupoDeFormulario.value).subscribe(response =>{
+       this.autenticador.autorizouUsuario(response.headers.get('Authorization'))
+       this.roteador.navigate(['inicio'])
+     },error => {
+       console.log(error)
+     })
     }, error => {
       let s: string = '';
       let mensagens = error.mensagensCampos

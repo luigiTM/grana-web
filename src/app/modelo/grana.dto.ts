@@ -1,6 +1,6 @@
 export interface GranaDTO{
     nome : String,
-    ususario : String,
+    usuario : String,
     codigoDeAcesso : String
     modificadoEm : String
 }

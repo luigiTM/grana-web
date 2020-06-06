@@ -37,7 +37,8 @@ export class AutenticarService {
     let tokenAutorizacao = valorAutorizacao.substring(7)
     let usuario: UsuarioLocal = {
       token: tokenAutorizacao,
-      email: this.ajudanteJwt.decodeToken(tokenAutorizacao).sub
+      email: this.ajudanteJwt.decodeToken(tokenAutorizacao).sub,
+      id: this.ajudanteJwt.decodeToken(tokenAutorizacao).user_id
     }
     this.armazenamento.setUsuarioLocal(usuario)
   }

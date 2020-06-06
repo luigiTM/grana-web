@@ -1,4 +1,5 @@
 export interface UsuarioLocal{
     token : string,
-    email : string
+    email : string,
+    id: string
 }

@@ -1,0 +1,12 @@
+<form (ngSubmit)="salvarGrana() ; $event.preventDefault()" [formGroup]="grupoDeFormulario">
+<div class="nome-grana">
+    <mat-form-field appearance="fill">
+        <mat-label>Nome Grana</mat-label>
+        <input formControlName="nome" matInput required>
+    </mat-form-field>
+</div>
+
+<div>
+    <input [disabled]="grupoDeFormulario.invalid" class="mat-raised-button" type="submit" value="Salvar">
+</div>
+</form>

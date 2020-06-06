@@ -24,6 +24,7 @@ import { UsuarioService } from './servicos/modelo/usuario.service';
 import { RegistrarService } from './servicos/registrar.service';
 import { AutenticacaoInterceptadorProvider } from 'src/interceptadores/autenticacao.interceptor';
 import { GranaService } from './servicos/modelo/grana.service';
+import { NovoGranaComponent } from './componentes/novo-grana/novo-grana.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { GranaService } from './servicos/modelo/grana.service';
     RegistrarComponent,
     EntrarComponent,
     InicioComponent,
-    PerfilComponent
+    PerfilComponent,
+    NovoGranaComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +68,10 @@ import { GranaService } from './servicos/modelo/grana.service';
       {
         path: 'perfil',
         component: PerfilComponent
+      },
+      {
+        path: 'novoGrana',
+        component: NovoGranaComponent
       }
     ])
   ],

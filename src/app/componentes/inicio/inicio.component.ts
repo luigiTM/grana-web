@@ -31,4 +31,13 @@ export class InicioComponent implements OnInit {
       this.roteador.navigate(['/'])
     }
   }
+
+  temGrana() : Boolean{
+    if(this.granas == undefined){
+      return false
+    }else{
+      return this.granas.length > 0
+    }
+  }
+
 }

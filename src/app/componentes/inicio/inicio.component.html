@@ -1,7 +1,7 @@
-<button class="novoGrana" mat-mini-fab>
+<button class="novoGrana" mat-mini-fab routerLink="/novoGrana">
     <mat-icon>note_add</mat-icon>
 </button>
-<mat-selection-list class="granas" #grana [multiple]="false">
+<mat-selection-list *ngIf="temGrana()" class="granas" #grana [multiple]="false">
     <mat-list-option *ngFor="let grana of granas">
         <div mat-line> {{grana.nome}} </div>
         <div mat-line> {{grana.modificadoEm}} </div>

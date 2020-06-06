@@ -1,4 +1,23 @@
 .formulario-entrar{
-    padding-top: 50px;
+    margin-top: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding-top: 30px;
     text-align: center;
+    border:solid 2px;
+    border-radius: 10px;
+}
+
+.email{
+    width: 300px;
+}
+
+.senha{
+    width: 300px;
+}
+
+.esqueci{
+    padding-top: 10px;
+    text-align: center;
+    padding-bottom: 15px;
 }

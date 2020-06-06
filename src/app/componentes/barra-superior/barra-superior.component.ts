@@ -15,19 +15,23 @@ export class BarraSuperiorComponent implements OnInit {
   }
 
   mostrarEntrar(){
-    return this.roteador.url.match('^/$') || this.roteador.url.match('^/registrar$')
+    return this.roteador.url.match('^/$') || 
+           this.roteador.url.match('^/registrar$')
   }
 
   mostrarRegistrar(){
-    return this.roteador.url.match('^/$') || this.roteador.url.match('^/entrar$')
+    return this.roteador.url.match('^/$') || 
+           this.roteador.url.match('^/entrar$')
   }
 
   mostrarPerfil(){
-    return this.roteador.url.match('^/inicio$')
+    return this.roteador.url.match('^/inicio$') || 
+           this.roteador.url.match('^/novoGrana$')
   }
 
   mostrarSair(){
-    return this.roteador.url.match('^/inicio$')
+    return this.roteador.url.match('^/inicio$')  || 
+           this.roteador.url.match('^/novoGrana$')
   }
 
   sair(){
