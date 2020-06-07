@@ -25,7 +25,7 @@ export class NovoGranaComponent implements OnInit {
   constructor(private roteador:Router, private granaServico : GranaService,private armazenamento : ArmazenamentoService, private construtorDeFormulario:FormBuilder) { 
     this.grupoDeFormulario = this.construtorDeFormulario.group({
       nome: ['',[Validators.required,Validators.minLength(1),Validators.maxLength(50)]],
-      usuario: [this.armazenamento.getUsuarioLocal().id,[Validators.required]]
+      usuario: [this.armazenamento.getIdUsuarioLocal(),[Validators.required]]
     })
   }
 

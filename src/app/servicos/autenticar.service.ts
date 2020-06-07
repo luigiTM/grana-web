@@ -3,14 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { CredenciaisDTO } from '../modelo/credenciais.dto';
 import { ArmazenamentoService } from './armazenamento.service';
 import { UsuarioLocal } from '../modelo/usuario_local';
-import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutenticarService {
-
-  private ajudanteJwt: JwtHelperService = new JwtHelperService()
 
   constructor(private http: HttpClient, private armazenamento: ArmazenamentoService) { }
 
@@ -36,9 +33,7 @@ export class AutenticarService {
   autorizouUsuario(valorAutorizacao: String) {
     let tokenAutorizacao = valorAutorizacao.substring(7)
     let usuario: UsuarioLocal = {
-      token: tokenAutorizacao,
-      email: this.ajudanteJwt.decodeToken(tokenAutorizacao).sub,
-      id: this.ajudanteJwt.decodeToken(tokenAutorizacao).user_id
+      token: tokenAutorizacao
     }
     this.armazenamento.setUsuarioLocal(usuario)
   }

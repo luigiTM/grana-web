@@ -20,9 +20,8 @@ export class PerfilComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    let usuarioLocal = this.armazenamento.getUsuarioLocal()
-    if (usuarioLocal && usuarioLocal.email) {
-      this.usuarioServico.buscarPorEmail(usuarioLocal.email).subscribe(response => {
+    if (this.armazenamento.getUsuarioLocal() && this.armazenamento.getEmailUsuarioLocal()) {
+      this.usuarioServico.buscarPorEmail(this.armazenamento.getEmailUsuarioLocal()).subscribe(response => {
         this.usuario = response
       }, error => {
         if (error.status == 403) {

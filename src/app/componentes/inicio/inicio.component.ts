@@ -20,7 +20,7 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.armazenamento.getUsuarioLocal() != null) {
-      this.usuarioServico.buscarPorEmail(this.armazenamento.getUsuarioLocal().email).subscribe(response => {
+      this.usuarioServico.buscarPorEmail(this.armazenamento.getEmailUsuarioLocal()).subscribe(response => {
         this.usuario = response
         this.granaServico.buscarGranasPorUsuario(this.usuario.idUsuario.toString()).subscribe(response => {
           this.granas = response['content']
