@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { GranaService } from 'src/app/servicos/modelo/grana.service';
+import { Component, OnInit, Inject } from '@angular/core';
 import { GranaDTO } from 'src/app/modelo/grana.dto';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ArmazenamentoService } from 'src/app/servicos/armazenamento.service';
-import { Router } from '@angular/router';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-novo-grana',
@@ -12,32 +11,34 @@ import { Router } from '@angular/router';
 })
 export class NovoGranaComponent implements OnInit {
 
-  grana : GranaDTO = {
+  grana: GranaDTO = {
+    id: "",
     nome: "",
     usuario: "",
     codigoDeAcesso: "",
-    modificadoEm:""
-    
+    modificadoEm: ""
+
   }
 
   grupoDeFormulario: FormGroup
 
-  constructor(private roteador:Router, private granaServico : GranaService,private armazenamento : ArmazenamentoService, private construtorDeFormulario:FormBuilder) { 
+  constructor(private dialogRef: MatDialogRef<NovoGranaComponent>,
+    @Inject(MAT_DIALOG_DATA) data, private armazenamento: ArmazenamentoService, private construtorDeFormulario: FormBuilder) {
     this.grupoDeFormulario = this.construtorDeFormulario.group({
-      nome: ['',[Validators.required,Validators.minLength(1),Validators.maxLength(50)]],
-      usuario: [this.armazenamento.getIdUsuarioLocal(),[Validators.required]]
+      nome: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(50)]],
+      usuario: [this.armazenamento.getIdUsuarioLocal(), [Validators.required]]
     })
   }
 
   ngOnInit(): void {
   }
 
-  salvarGrana(){
-    this.granaServico.salvarGrana(this.grupoDeFormulario.value).subscribe(response =>{
-      this.roteador.navigate(['/inicio'])
-    },error=>{
-      console.log(error)
-    })
+  salvar() {
+    this.dialogRef.close(this.grupoDeFormulario.value)
+  }
+
+  cancelar() {
+    this.dialogRef.close()
   }
 
 }

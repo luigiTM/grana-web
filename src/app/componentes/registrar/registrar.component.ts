@@ -42,9 +42,8 @@ export class RegistrarComponent implements OnInit {
     }, error => {
       let s: string = '';
       let mensagens = error.mensagensCampos
-      for (var i = 0; i <= mensagens.lenght; i++) {
-        console.log(mensagens.length)
-        s = s + mensagens[i].campo + mensagens[i].mensagem
+      for (var i = 0; i < mensagens.length; i++) {
+        s = s + mensagens[i].mensagem + '\n'
       }
       window.alert(s)
     })

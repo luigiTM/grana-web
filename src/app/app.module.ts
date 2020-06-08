@@ -25,6 +25,10 @@ import { RegistrarService } from './servicos/registrar.service';
 import { AutenticacaoInterceptadorProvider } from 'src/interceptadores/autenticacao.interceptor';
 import { GranaService } from './servicos/modelo/grana.service';
 import { NovoGranaComponent } from './componentes/novo-grana/novo-grana.component';
+import { EditarGranaComponent } from './componentes/editar-grana/editar-grana.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BarraInferiorComponent } from './componentes/barra-inferior/barra-inferior.component';
+
 
 
 @NgModule({
@@ -36,7 +40,9 @@ import { NovoGranaComponent } from './componentes/novo-grana/novo-grana.componen
     EntrarComponent,
     InicioComponent,
     PerfilComponent,
-    NovoGranaComponent
+    NovoGranaComponent,
+    EditarGranaComponent,
+    BarraInferiorComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +57,7 @@ import { NovoGranaComponent } from './componentes/novo-grana/novo-grana.componen
     MatListModule,
     ReactiveFormsModule,
     FormsModule,
+    MatDialogModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -72,6 +79,9 @@ import { NovoGranaComponent } from './componentes/novo-grana/novo-grana.componen
       {
         path: 'novoGrana',
         component: NovoGranaComponent
+      },{
+        path: 'editarGrana',
+        component: EditarGranaComponent
       }
     ])
   ],

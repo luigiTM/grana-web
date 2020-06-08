@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { CredenciaisDTO } from '../modelo/credenciais.dto';
 import { ArmazenamentoService } from './armazenamento.service';
 import { UsuarioLocal } from '../modelo/usuario_local';
+import { API_CONFIGURACAO } from 'src/configuracoes/configuracao_api';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class AutenticarService {
   constructor(private http: HttpClient, private armazenamento: ArmazenamentoService) { }
 
   autenticarUsuario(credenciais: CredenciaisDTO) {
-    return this.http.post("/api/login",
+    return this.http.post(`${API_CONFIGURACAO.urlBase}/login`,
       credenciais,
       {
         observe: 'response',
@@ -22,7 +23,7 @@ export class AutenticarService {
   }
 
   atualizarToken() {
-    return this.http.post("/api/autenticacao/atualizarToken", {},
+    return this.http.post(`${API_CONFIGURACAO.urlBase}/autenticacao/atualizarToken`, {},
       {
         observe: 'response',
         responseType: 'text'
