@@ -5,9 +5,9 @@
             <input [(ngModel)]="credenciais.email" name="email" matInput required>
         </mat-form-field>
         <br>
-        <mat-form-field appearance="fill">
+        <mat-form-field class="senha" appearance="fill">
             <mat-label>Senha</mat-label>
-            <input class="senha" [(ngModel)]="credenciais.senha" name="senha" type="password" matInput required>
+            <input [(ngModel)]="credenciais.senha" name="senha" type="password" matInput required>
         </mat-form-field>
         <br>
         <input class="mat-raised-button" type="submit" value="Entrar">

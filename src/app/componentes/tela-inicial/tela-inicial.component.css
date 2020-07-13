@@ -1,9 +1,14 @@
 .texto-inicial{
-    padding-top: 50px;
+    padding-top: 2%;
     text-align: center;
+    font-size: 2vw;
+    text-shadow: 1px 1px 1px #111111;
 }
 
 .fundo{
     background-image: url(src\assets\imagens\background.jpg);
-    height: 100vh;
+    background-size: 100%;
+    min-height: 600px;
+    background-repeat: no-repeat;
+    height: auto;
 }
