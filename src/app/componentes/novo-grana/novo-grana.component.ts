@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { GranaDTO } from 'src/app/modelo/grana.dto';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ArmazenamentoService } from 'src/app/servicos/armazenamento.service';
+import { ArmazenamentoService } from 'src/app/servicos/armazenamento.service/armazenamento.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({

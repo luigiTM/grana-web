@@ -8,7 +8,7 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { ArmazenamentoService } from 'src/app/servicos/armazenamento.service';
+import { ArmazenamentoService } from 'src/app/servicos/armazenamento.service/armazenamento.service';
 import { Injectable } from '@angular/core';
 
 @Injectable()

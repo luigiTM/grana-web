@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AutenticarService } from 'src/app/servicos/autenticar.service';
+import { AutenticarService } from 'src/app/servicos/autenticar.service/autenticar.service';
 
 @Component({
   selector: 'app-barra-superior',

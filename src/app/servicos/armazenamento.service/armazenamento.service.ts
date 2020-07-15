@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CHAVES_ARMAZENAMENTO } from 'src/configuracoes/chaves_armazenamento.config';
-import { UsuarioLocal } from '../modelo/usuario_local';
+import { UsuarioLocal } from '../../modelo/usuario_local';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({

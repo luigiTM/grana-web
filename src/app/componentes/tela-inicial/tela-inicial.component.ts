@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AutenticarService } from 'src/app/servicos/autenticar.service';
+import { AutenticarService } from 'src/app/servicos/autenticar.service/autenticar.service';
 import { Router } from '@angular/router';
-import { ArmazenamentoService } from 'src/app/servicos/armazenamento.service';
+import { ArmazenamentoService } from 'src/app/servicos/armazenamento.service/armazenamento.service';
 
 @Component({
   selector: 'app-tela-inicial',

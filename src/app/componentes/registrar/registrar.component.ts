@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { RegistrarService } from '../../servicos/registrar.service';
+import { RegistrarService } from '../../servicos/registrar.service/registrar.service';
 import { Router } from '@angular/router';
 import { CredenciaisDTO } from 'src/app/modelo/credenciais.dto';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AutenticarService } from 'src/app/servicos/autenticar.service';
+import { AutenticarService } from 'src/app/servicos/autenticar.service/autenticar.service';
 
 @Component({
   selector: 'app-registrar',

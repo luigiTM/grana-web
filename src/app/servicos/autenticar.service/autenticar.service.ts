@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CredenciaisDTO } from '../modelo/credenciais.dto';
-import { ArmazenamentoService } from './armazenamento.service';
-import { UsuarioLocal } from '../modelo/usuario_local';
+import { CredenciaisDTO } from '../../modelo/credenciais.dto';
+import { ArmazenamentoService } from '../armazenamento.service/armazenamento.service';
+import { UsuarioLocal } from '../../modelo/usuario_local';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

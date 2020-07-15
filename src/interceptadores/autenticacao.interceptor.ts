@@ -6,7 +6,7 @@ import {
     HTTP_INTERCEPTORS
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ArmazenamentoService } from 'src/app/servicos/armazenamento.service';
+import { ArmazenamentoService } from 'src/app/servicos/armazenamento.service/armazenamento.service';
 import { Injectable } from '@angular/core';
 
 @Injectable()

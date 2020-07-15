@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AutenticarService } from 'src/app/servicos/autenticar.service';
+import { AutenticarService } from 'src/app/servicos/autenticar.service/autenticar.service';
 import { Router } from '@angular/router';
 import { CredenciaisDTO } from 'src/app/modelo/credenciais.dto';
-import { UsuarioService } from 'src/app/servicos/modelo/usuario.service';
+import { UsuarioService } from 'src/app/servicos/modelo/usuario.service/usuario.service';
 
 @Component({
   selector: 'app-entrar',

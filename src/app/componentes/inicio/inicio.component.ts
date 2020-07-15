@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { GranaDTO } from 'src/app/modelo/grana.dto';
-import { GranaService } from 'src/app/servicos/modelo/grana.service';
-import { ArmazenamentoService } from 'src/app/servicos/armazenamento.service';
+import { GranaService } from 'src/app/servicos/modelo/grana.service/grana.service';
+import { ArmazenamentoService } from 'src/app/servicos/armazenamento.service/armazenamento.service';
 import { UsuarioDTO } from 'src/app/modelo/cliente.dto';
-import { UsuarioService } from 'src/app/servicos/modelo/usuario.service';
+import { UsuarioService } from 'src/app/servicos/modelo/usuario.service/usuario.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { NovoGranaComponent } from '../novo-grana/novo-grana.component';
