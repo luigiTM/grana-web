@@ -29,8 +29,6 @@ import { EditarGranaComponent } from './componentes/editar-grana/editar-grana.co
 import { MatDialogModule } from '@angular/material/dialog';
 import { BarraInferiorComponent } from './componentes/barra-inferior/barra-inferior.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -11,7 +11,7 @@ export class GranaService {
   constructor(private http: HttpClient) { }
 
   buscarGranasPorUsuario(usuario_id: string) {
-    return this.http.get(`${environment.urlBase}/grana/paginado/?usuario=${usuario_id}`)
+    return this.http.get<GranaDTO[]>(`${environment.urlBase}/grana/paginado/?usuario=${usuario_id}`)
   }
 
   salvarGrana(grana : GranaDTO){

@@ -11,6 +11,6 @@ export class GastoService {
   constructor(private http: HttpClient) { }
 
   buscarGastosPorGrana(idGrana : String){
-    return this.http.get<GastoDTO[]>(`${environment.urlBase}/usuario/${idGrana}`)
+    return this.http.get<GastoDTO[]>(`${environment.urlBase}/gasto/grana/${idGrana}`)
   }
 }
