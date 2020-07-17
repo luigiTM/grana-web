@@ -16,8 +16,8 @@ export class NovoGranaComponent implements OnInit {
     nome: "",
     usuario: "",
     codigoDeAcesso: "",
-    modificadoEm: ""
-
+    modificadoEm: "",
+    gastos : []
   }
 
   grupoDeFormulario: FormGroup
@@ -26,7 +26,7 @@ export class NovoGranaComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) data, private armazenamento: ArmazenamentoService, private construtorDeFormulario: FormBuilder) {
     this.grupoDeFormulario = this.construtorDeFormulario.group({
       nome: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(50)]],
-      usuario: [this.armazenamento.getIdUsuarioLocal(), [Validators.required]]
+      usuario: [this.armazenamento.getidLocal(), [Validators.required]]
     })
   }
 

@@ -21,7 +21,7 @@ export class ArmazenamentoService {
     }
   }
 
-  getIdUsuarioLocal(): String {
+  getidLocal(): String {
     let usuario = localStorage.getItem(CHAVES_ARMAZENAMENTO.usuarioLocal)
     if (usuario == null) {
       return null

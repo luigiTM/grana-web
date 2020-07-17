@@ -1,5 +1,5 @@
 export interface UsuarioDTO{
-    idUsuario : String,
+    id : String,
     nome : String,
     email : String,
     imagem : String

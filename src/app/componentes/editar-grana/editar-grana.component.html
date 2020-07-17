@@ -1,4 +1,19 @@
-<p>{{grana?.nome}}</p>
+<div class="titulo-grana">
+    <h1>{{grana?.nome}}</h1>
+</div>
 
+<mat-table [dataSource]="gastos" class="mat-elevation-z8 tabela-grana">
 
+    <ng-container matColumnDef="Gasto">
+        <mat-header-cell *matHeaderCellDef> Gasto </mat-header-cell>
+        <mat-cell *matCellDef="let elemento"> {{elemento.tipo}} </mat-cell>
+    </ng-container>
 
+    <ng-container matColumnDef="Valor">
+        <mat-header-cell *matHeaderCellDef> Valor </mat-header-cell>
+        <mat-cell *matCellDef="let elemento"> {{elemento.valor | currency : 'BRL'}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="colunas"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: colunas;"></mat-row>
+</mat-table>

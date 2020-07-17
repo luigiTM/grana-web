@@ -28,6 +28,7 @@ import { NovoGranaComponent } from './componentes/novo-grana/novo-grana.componen
 import { EditarGranaComponent } from './componentes/editar-grana/editar-grana.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BarraInferiorComponent } from './componentes/barra-inferior/barra-inferior.component';
+import {MatTableModule} from '@angular/material/table'; 
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { BarraInferiorComponent } from './componentes/barra-inferior/barra-infer
     ReactiveFormsModule,
     FormsModule,
     MatDialogModule,
+    MatTableModule,
     RouterModule.forRoot([
       {
         path: '',
