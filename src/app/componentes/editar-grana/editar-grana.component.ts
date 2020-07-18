@@ -10,21 +10,14 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 @Component({
   selector: 'app-editar-grana',
   templateUrl: './editar-grana.component.html',
-  animations: [
-    trigger('detailExpand', [
-      state('collapsed', style({ height: '0px', minHeight: '0' })),
-      state('expanded', style({ height: '*' })),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
-    ]),
-  ],
   styleUrls: ['./editar-grana.component.css', '/src/app/app.component.css']
 })
 export class EditarGranaComponent implements OnInit {
 
   grana: GranaDTO
   gastos: GastoDTO[]
-  colunas: String[] = ['tipo', 'valor'];
-  expandedElement: GastoDTO | null;
+  colunas: String[] = []
+  pessoas : String[] = []
 
   constructor(private roteador: ActivatedRoute, private granaServico: GranaService, private gastoServico: GastoService) { }
 
@@ -33,10 +26,26 @@ export class EditarGranaComponent implements OnInit {
       this.granaServico.buscarGranaPorId(parametros['grana_id']).subscribe(response => {
         this.grana = response
         this.gastos = this.grana.gastos
+        this.preencherColunas()
       }, error => {
         console.log(error)
       })
     })
   }
 
+  preencherColunas() {
+    for (let chave in this.gastos[0]) {
+      if (!(chave == "idGasto") && !(chave == "gastosPessoas")) {
+        this.colunas.push(chave)
+      }
+    }
+    for(let gasto of Object.values(this.gastos)){
+      for(let gastoPessoa of Object.values(gasto.gastosPessoas)){
+          if(this.pessoas.indexOf(gastoPessoa.pessoa.nome) < 0){
+            this.pessoas.push(gastoPessoa.pessoa.nome)
+          }
+      }
+    }
+    this.colunas = this.colunas.concat(this.pessoas)
+  }
 }
