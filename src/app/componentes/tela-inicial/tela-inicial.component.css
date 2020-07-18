@@ -1,13 +1,14 @@
 .texto-inicial{
     padding-top: 2%;
+    height: 100vh;
     text-align: center;
     font-size: 2vw;
     text-shadow: 1px 1px 1px #111111;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .fundo{
     background-image: url(src\assets\imagens\background.jpg);
-    background-size: 100%;
     min-height: 600px;
     background-repeat: no-repeat;
     height: auto;

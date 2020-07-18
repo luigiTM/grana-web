@@ -4,17 +4,27 @@ import { GranaService } from 'src/app/servicos/modelo/grana.service/grana.servic
 import { ActivatedRoute } from '@angular/router';
 import { GastoDTO } from 'src/app/modelo/gasto.dto';
 import { GastoService } from 'src/app/servicos/modelo/gasto.service/gasto.service';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+
 
 @Component({
   selector: 'app-editar-grana',
   templateUrl: './editar-grana.component.html',
-  styleUrls: ['./editar-grana.component.css']
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
+  styleUrls: ['./editar-grana.component.css', '/src/app/app.component.css']
 })
 export class EditarGranaComponent implements OnInit {
 
   grana: GranaDTO
   gastos: GastoDTO[]
-  colunas: string[] = ['Gasto', 'Valor'];
+  colunas: String[] = ['tipo', 'valor'];
+  expandedElement: GastoDTO | null;
 
   constructor(private roteador: ActivatedRoute, private granaServico: GranaService, private gastoServico: GastoService) { }
 

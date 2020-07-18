@@ -1,23 +1,31 @@
-<div class="formulario-registro">
-    <form (ngSubmit)="registrarUsuario() ; $event.preventDefault()" [formGroup]="grupoDeFormulario">
-        <mat-form-field appearance="fill">
-            <mat-label>Nome</mat-label>
-            <input formControlName="nome" matInput required>
-        </mat-form-field>
-        <p class="validacao" *ngIf="grupoDeFormulario.controls['nome'].dirty && grupoDeFormulario.controls['nome'].errors" margin-left>Nome inválido</p>
-        <br>
-        <mat-form-field appearance="fill">
-            <mat-label>Email</mat-label>
-            <input formControlName="email" matInput required>
-        </mat-form-field>
-        <p class="validacao" *ngIf="grupoDeFormulario.controls['email'].dirty && grupoDeFormulario.controls['email'].errors" margin-left>Email inválido</p>
-        <br>
-        <mat-form-field appearance="fill">
-            <mat-label>Senha</mat-label>
-            <input formControlName="senha" type="password" matInput required>
-        </mat-form-field>
-        <p class="validacao" *ngIf="grupoDeFormulario.controls['senha'].dirty && grupoDeFormulario.controls['senha'].errors" margin-left>Senha inválida</p>
-        <br>
-        <input [disabled]="grupoDeFormulario.invalid" class="mat-raised-button" type="submit" value="Registrar">
-    </form>
+<div class="container">
+    <div class="formulario-registro">
+        <form (ngSubmit)="registrarUsuario() ; $event.preventDefault()" [formGroup]="grupoDeFormulario">
+            <mat-form-field appearance="fill">
+                <mat-label>Nome</mat-label>
+                <input formControlName="nome" matInput required>
+            </mat-form-field>
+            <p class="validacao"
+                *ngIf="grupoDeFormulario.controls['nome'].dirty && grupoDeFormulario.controls['nome'].errors"
+                margin-left>Nome inválido</p>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input formControlName="email" matInput required>
+            </mat-form-field>
+            <p class="validacao"
+                *ngIf="grupoDeFormulario.controls['email'].dirty && grupoDeFormulario.controls['email'].errors"
+                margin-left>Email inválido</p>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Senha</mat-label>
+                <input formControlName="senha" type="password" matInput required>
+            </mat-form-field>
+            <p class="validacao"
+                *ngIf="grupoDeFormulario.controls['senha'].dirty && grupoDeFormulario.controls['senha'].errors"
+                margin-left>Senha inválida</p>
+            <br>
+            <input [disabled]="grupoDeFormulario.invalid" class="mat-raised-button" type="submit" value="Registrar">
+        </form>
+    </div>
 </div>

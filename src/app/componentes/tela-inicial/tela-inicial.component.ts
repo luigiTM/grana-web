@@ -6,7 +6,7 @@ import { ArmazenamentoService } from 'src/app/servicos/armazenamento.service/arm
 @Component({
   selector: 'app-tela-inicial',
   templateUrl: './tela-inicial.component.html',
-  styleUrls: ['./tela-inicial.component.css']
+  styleUrls: ['./tela-inicial.component.css','/src/app/app.component.css']
 })
 export class TelaInicialComponent implements OnInit {
 

@@ -1,9 +1,11 @@
-<button class="novoGrana" mat-mini-fab (click)="criarGrana()">
-    <mat-icon>note_add</mat-icon>
-</button>
-<mat-selection-list *ngIf="temGrana()" class="granas" #grana [multiple]="false">
-    <mat-list-option *ngFor="let grana of granas" (click)='editarGrana(grana.id)'>
-        <div mat-line> {{grana.nome}} </div>
-        <div mat-line> {{grana.modificadoEm}} </div>
-    </mat-list-option>
-  </mat-selection-list>
+<div class="container">
+    <button class="novoGrana" mat-mini-fab (click)="criarGrana()">
+        <mat-icon>note_add</mat-icon>
+    </button>
+    <mat-selection-list *ngIf="temGrana()" class="granas" #grana [multiple]="false">
+        <mat-list-option *ngFor="let grana of granas" (click)='editarGrana(grana.id)'>
+            <div mat-line> {{grana.nome}} </div>
+            <div mat-line> {{grana.modificadoEm}} </div>
+        </mat-list-option>
+    </mat-selection-list>
+</div>

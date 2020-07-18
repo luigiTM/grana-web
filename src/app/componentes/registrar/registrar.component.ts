@@ -8,7 +8,7 @@ import { AutenticarService } from 'src/app/servicos/autenticar.service/autentica
 @Component({
   selector: 'app-registrar',
   templateUrl: './registrar.component.html',
-  styleUrls: ['./registrar.component.css']
+  styleUrls: ['./registrar.component.css', '/src/app/app.component.css']
 })
 export class RegistrarComponent implements OnInit {
 
@@ -20,7 +20,7 @@ export class RegistrarComponent implements OnInit {
 
   grupoDeFormulario: FormGroup
 
-  constructor(private autenticador : AutenticarService, private registrador: RegistrarService, private roteador: Router, private construtorDeFormulario: FormBuilder) {
+  constructor(private autenticador: AutenticarService, private registrador: RegistrarService, private roteador: Router, private construtorDeFormulario: FormBuilder) {
     this.grupoDeFormulario = this.construtorDeFormulario.group({
       nome: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]],
       email: ['', [Validators.required, Validators.email]],
@@ -33,12 +33,12 @@ export class RegistrarComponent implements OnInit {
 
   registrarUsuario() {
     this.registrador.registrarUsuario(this.grupoDeFormulario.value).subscribe(response => {
-     this.autenticador.autenticarUsuario(this.grupoDeFormulario.value).subscribe(response =>{
-       this.autenticador.autorizouUsuario(response.headers.get('Authorization'))
-       this.roteador.navigate(['inicio'])
-     },error => {
-       console.log(error)
-     })
+      this.autenticador.autenticarUsuario(this.grupoDeFormulario.value).subscribe(response => {
+        this.autenticador.autorizouUsuario(response.headers.get('Authorization'))
+        this.roteador.navigate(['inicio'])
+      }, error => {
+        console.log(error)
+      })
     }, error => {
       let s: string = '';
       let mensagens = error.mensagensCampos

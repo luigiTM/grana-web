@@ -1,17 +1,19 @@
-<div class="formulario-entrar">
-    <form (ngSubmit)="autenticarUsuario(); $event.preventDefault()">
-        <mat-form-field class="email" appearance="fill">
-            <mat-label>Email</mat-label>
-            <input [(ngModel)]="credenciais.email" name="email" matInput required>
-        </mat-form-field>
+<div class="container">
+    <div class="formulario-entrar">
+        <form (ngSubmit)="autenticarUsuario(); $event.preventDefault()">
+            <mat-form-field class="email" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input [(ngModel)]="credenciais.email" name="email" matInput required>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="senha" appearance="fill">
+                <mat-label>Senha</mat-label>
+                <input [(ngModel)]="credenciais.senha" name="senha" type="password" matInput required>
+            </mat-form-field>
+            <br>
+            <input class="mat-raised-button" type="submit" value="Entrar">
+        </form>
         <br>
-        <mat-form-field class="senha" appearance="fill">
-            <mat-label>Senha</mat-label>
-            <input [(ngModel)]="credenciais.senha" name="senha" type="password" matInput required>
-        </mat-form-field>
-        <br>
-        <input class="mat-raised-button" type="submit" value="Entrar">
-    </form>
-    <br>
-    <a class="esqueci">Esqueci a senha</a>
+        <a class="esqueci">Esqueci a senha</a>
+    </div>
 </div>

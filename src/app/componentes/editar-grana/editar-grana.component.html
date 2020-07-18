@@ -1,19 +1,30 @@
-<div class="titulo-grana">
-    <h1>{{grana?.nome}}</h1>
+<div class="container">
+    <div class="titulo-grana">
+        <h1>{{grana?.nome}}</h1>
+    </div>
+
+    <table mat-table [dataSource]="gastos" multiTemplateDataRows class="mat-elevation-z8 tabela-grana">
+        <ng-container matColumnDef="{{coluna}}" *ngFor="let coluna of colunas">
+            <th mat-header-cell *matHeaderCellDef> {{coluna}} </th>
+            <td mat-cell *matCellDef="let gasto"> {{gasto[coluna]}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="expandedDetail">
+            <td mat-cell *matCellDef="let gasto" [attr.colspan]="colunas.length">
+                <div class="example-element-detail"
+                    [@detailExpand]="gasto == expandedElement ? 'expanded' : 'collapsed'">
+                    <div>
+                        <div>Teste</div>
+                    </div>
+                </div>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+        <tr mat-row *matRowDef="let element; columns: colunas;" class="example-element-row"
+            [class.example-expanded-row]="expandedElement === element"
+            (click)="expandedElement = expandedElement === element ? null : element">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+    </table>
 </div>
-
-<mat-table [dataSource]="gastos" class="mat-elevation-z8 tabela-grana">
-
-    <ng-container matColumnDef="Gasto">
-        <mat-header-cell *matHeaderCellDef> Gasto </mat-header-cell>
-        <mat-cell *matCellDef="let elemento"> {{elemento.tipo}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="Valor">
-        <mat-header-cell *matHeaderCellDef> Valor </mat-header-cell>
-        <mat-cell *matCellDef="let elemento"> {{elemento.valor | currency : 'BRL'}} </mat-cell>
-    </ng-container>
-
-    <mat-header-row *matHeaderRowDef="colunas"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: colunas;"></mat-row>
-</mat-table>

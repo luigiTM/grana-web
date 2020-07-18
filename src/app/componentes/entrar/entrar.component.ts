@@ -7,7 +7,7 @@ import { UsuarioService } from 'src/app/servicos/modelo/usuario.service/usuario.
 @Component({
   selector: 'app-entrar',
   templateUrl: './entrar.component.html',
-  styleUrls: ['./entrar.component.css']
+  styleUrls: ['./entrar.component.css', '/src/app/app.component.css']
 })
 export class EntrarComponent implements OnInit {
 

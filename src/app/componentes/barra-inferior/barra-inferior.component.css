@@ -1,7 +1,6 @@
 footer{
-    position: absolute;bottom: 0;
     background-color: black;
-    min-height: 100px;
+    min-height: 80px;
     width: 100%;
 }
 
