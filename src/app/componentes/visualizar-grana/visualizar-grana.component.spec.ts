@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditarGranaComponent } from './editar-grana.component';
+import { EditarGranaComponent } from './visualizar-grana.component';
 
 describe('EditarGranaComponent', () => {
   let component: EditarGranaComponent;

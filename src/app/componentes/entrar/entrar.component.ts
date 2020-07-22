@@ -17,16 +17,21 @@ export class EntrarComponent implements OnInit {
     senha: ""
   }
 
+  codigoAcesso: String
+
   constructor(private autenticador: AutenticarService, private roteador: Router, private usuarioServico: UsuarioService) { }
 
   ngOnInit(): void {
   }
 
   autenticarUsuario() {
-    this.autenticador.autenticarUsuario(this.credenciais).subscribe(response => {
-      this.autenticador.autorizouUsuario(response.headers.get('Authorization'))
-      this.roteador.navigate(['inicio'])
-    }, error => { })
+    if (this.codigoAcesso !== undefined) {
+      this.roteador.navigate(['/visualizarGrana', { codigo_acesso: this.codigoAcesso }])
+    } else {
+      this.autenticador.autenticarUsuario(this.credenciais).subscribe(response => {
+        this.autenticador.autorizouUsuario(response.headers.get('Authorization'))
+        this.roteador.navigate(['inicio'])
+      }, error => { })
+    }
   }
-
 }

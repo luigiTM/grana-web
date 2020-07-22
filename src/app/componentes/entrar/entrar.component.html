@@ -11,6 +11,12 @@
                 <input [(ngModel)]="credenciais.senha" name="senha" type="password" matInput required>
             </mat-form-field>
             <br>
+            <p>Ou</p>
+            <mat-form-field class="codigo-acesso" appearance="fill">
+                <mat-label>Código de acesso</mat-label>
+                <input [(ngModel)]="codigoAcesso" name="codigoAcesso" matInput required>
+            </mat-form-field>
+            <br>
             <input class="mat-raised-button" type="submit" value="Entrar">
         </form>
         <br>

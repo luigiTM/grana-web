@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="titulo-grana">
+        <h1>{{grana?.nome}}</h1>
+    </div>
+
+    <mat-table [dataSource]="gastos" class="mat-elevation-z8 tabela-grana">
+
+        <ng-container matColumnDef="tipo">
+            <mat-header-cell *matHeaderCellDef> Gasto </mat-header-cell>
+            <mat-cell *matCellDef="let elemento"> {{elemento.tipo}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="valor">
+            <mat-header-cell *matHeaderCellDef> Valor </mat-header-cell>
+            <mat-cell *matCellDef="let elemento"> {{elemento.valor | currency : 'BRL'}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="data">
+            <mat-header-cell *matHeaderCellDef> Data </mat-header-cell>
+            <mat-cell *matCellDef="let elemento"> {{elemento.data  | date:'shortDate' }} </mat-cell>
+        </ng-container>
+
+        <ng-container *ngFor="let coluna of pessoas; let indexColuna = index" matColumnDef={{coluna}}>
+            <mat-header-cell *matHeaderCellDef> {{coluna}} </mat-header-cell>
+            <mat-cell *matCellDef="let elemento"> {{elemento.gastosPessoas[indexColuna].valorGasto | currency : 'BRL'}} </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="colunas"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: colunas;"></mat-row>
+    </mat-table> 

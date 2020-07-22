@@ -25,7 +25,7 @@ import { RegistrarService } from './servicos/registrar.service/registrar.service
 import { AutenticacaoInterceptadorProvider } from 'src/interceptadores/autenticacao.interceptor';
 import { GranaService } from './servicos/modelo/grana.service/grana.service';
 import { NovoGranaComponent } from './componentes/novo-grana/novo-grana.component';
-import { EditarGranaComponent } from './componentes/editar-grana/editar-grana.component';
+import { VisualizarGranaComponent } from './componentes/visualizar-grana/visualizar-grana.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BarraInferiorComponent } from './componentes/barra-inferior/barra-inferior.component';
 import {MatTableModule} from '@angular/material/table'; 
@@ -40,7 +40,7 @@ import {MatTableModule} from '@angular/material/table';
     InicioComponent,
     PerfilComponent,
     NovoGranaComponent,
-    EditarGranaComponent,
+    VisualizarGranaComponent,
     BarraInferiorComponent
   ],
   imports: [
@@ -80,8 +80,8 @@ import {MatTableModule} from '@angular/material/table';
         path: 'novoGrana',
         component: NovoGranaComponent
       },{
-        path: 'editarGrana',
-        component: EditarGranaComponent
+        path: 'visualizarGrana',
+        component: VisualizarGranaComponent
       }
     ])
   ],

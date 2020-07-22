@@ -22,4 +22,8 @@ export class GranaService {
     return this.http.get<GranaDTO>(`${environment.urlBase}/grana/${grana_id}`)
   }
 
+  buscarGranaPorCodigoAcesso(codigo_acesso : String){
+    return this.http.get<GranaDTO>(`${environment.urlBase}/grana/codigoDeAcesso/${codigo_acesso}`)
+  }
+
 }

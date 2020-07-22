@@ -4,15 +4,14 @@ import { GranaService } from 'src/app/servicos/modelo/grana.service/grana.servic
 import { ActivatedRoute } from '@angular/router';
 import { GastoDTO } from 'src/app/modelo/gasto.dto';
 import { GastoService } from 'src/app/servicos/modelo/gasto.service/gasto.service';
-import { animate, state, style, transition, trigger } from '@angular/animations';
 
 
 @Component({
-  selector: 'app-editar-grana',
-  templateUrl: './editar-grana.component.html',
-  styleUrls: ['./editar-grana.component.css', '/src/app/app.component.css']
+  selector: 'app-visualizar-grana',
+  templateUrl: './visualizar-grana.component.html',
+  styleUrls: ['./visualizar-grana.component.css', '/src/app/app.component.css']
 })
-export class EditarGranaComponent implements OnInit {
+export class VisualizarGranaComponent implements OnInit {
 
   grana: GranaDTO
   gastos: GastoDTO[]
@@ -23,6 +22,7 @@ export class EditarGranaComponent implements OnInit {
 
   ngOnInit(): void {
     this.roteador.params.subscribe(parametros => {
+      if(parametros['grana_id'] !== undefined){
       this.granaServico.buscarGranaPorId(parametros['grana_id']).subscribe(response => {
         this.grana = response
         this.gastos = this.grana.gastos
@@ -30,7 +30,16 @@ export class EditarGranaComponent implements OnInit {
       }, error => {
         console.log(error)
       })
+    }
+  else if(parametros['codigo_acesso'] !== undefined){
+    this.granaServico.buscarGranaPorCodigoAcesso(parametros['codigo_acesso']).subscribe(response => {
+      this.grana = response
+      this.gastos = this.grana.gastos
+      this.preencherColunas()
+    }, error => {
+      console.log(error)
     })
+  }})
   }
 
   preencherColunas() {

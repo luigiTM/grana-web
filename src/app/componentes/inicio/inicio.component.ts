@@ -54,8 +54,8 @@ export class InicioComponent implements OnInit {
     })
   }
 
-  editarGrana(grana_id: String) {
-    this.roteador.navigate(['/editarGrana', { grana_id: grana_id }])
+  visualizarGrana(grana_id: String) {
+    this.roteador.navigate(['/visualizarGrana', { grana_id: grana_id }])
   }
 
 }
