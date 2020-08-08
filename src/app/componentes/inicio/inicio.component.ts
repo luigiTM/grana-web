@@ -18,7 +18,11 @@ export class InicioComponent implements OnInit {
   usuario: UsuarioDTO
   granas: GranaDTO[]
 
-  constructor(private dialogoNovoGrana: MatDialog, private granaServico: GranaService, private armazenamento: ArmazenamentoService, private usuarioServico: UsuarioService, private roteador: Router) { }
+  constructor(private dialogoNovoGrana: MatDialog,
+              private granaServico: GranaService, 
+              private armazenamento: ArmazenamentoService, 
+              private usuarioServico: UsuarioService, 
+              private roteador: Router) { }
 
   ngOnInit(): void {
     if (this.armazenamento.getUsuarioLocal() != null) {

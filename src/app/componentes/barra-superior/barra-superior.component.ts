@@ -26,12 +26,14 @@ export class BarraSuperiorComponent implements OnInit {
 
   mostrarPerfil(){
     return this.roteador.url.match('^/inicio$') || 
-           this.roteador.url.match('^/novoGrana$')
+           this.roteador.url.match('^/visualizarGrana$') ||
+           this.roteador.url.match('^/editarGrana$')
   }
 
   mostrarSair(){
     return this.roteador.url.match('^/inicio$')  || 
-           this.roteador.url.match('^/novoGrana$')
+           this.roteador.url.match('^/visualizarGrana$') ||
+           this.roteador.url.match('^/editarGrana$')
   }
 
   sair(){

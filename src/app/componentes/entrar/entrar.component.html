@@ -3,23 +3,23 @@
         <form (ngSubmit)="autenticarUsuario(); $event.preventDefault()">
             <mat-form-field class="email" appearance="fill">
                 <mat-label>Email</mat-label>
-                <input [(ngModel)]="credenciais.email" name="email" matInput required>
+                <input [(ngModel)]="credenciais.email" name="email" matInput>
             </mat-form-field>
             <br>
             <mat-form-field class="senha" appearance="fill">
                 <mat-label>Senha</mat-label>
-                <input [(ngModel)]="credenciais.senha" name="senha" type="password" matInput required>
+                <input [(ngModel)]="credenciais.senha" name="senha" type="password" matInput>
             </mat-form-field>
             <br>
             <p>Ou</p>
             <mat-form-field class="codigo-acesso" appearance="fill">
                 <mat-label>Código de acesso</mat-label>
-                <input [(ngModel)]="codigoAcesso" name="codigoAcesso" matInput required>
+                <input [(ngModel)]="codigoAcesso" name="codigoAcesso" matInput>
             </mat-form-field>
             <br>
             <input class="mat-raised-button" type="submit" value="Entrar">
         </form>
         <br>
-        <a class="esqueci">Esqueci a senha</a>
+        <a class="esqueci-senha" routerLink="/esqueciSenha">Esqueci a senha</a>
     </div>
 </div>

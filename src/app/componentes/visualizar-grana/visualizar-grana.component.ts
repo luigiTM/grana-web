@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GranaDTO } from 'src/app/modelo/grana.dto';
 import { GranaService } from 'src/app/servicos/modelo/grana.service/grana.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GastoDTO } from 'src/app/modelo/gasto.dto';
-import { GastoService } from 'src/app/servicos/modelo/gasto.service/gasto.service';
-
 
 @Component({
   selector: 'app-visualizar-grana',
@@ -18,10 +16,12 @@ export class VisualizarGranaComponent implements OnInit {
   colunas: String[] = []
   pessoas : String[] = []
 
-  constructor(private roteador: ActivatedRoute, private granaServico: GranaService, private gastoServico: GastoService) { }
+  constructor(private roteadorAtivo: ActivatedRoute, 
+              private granaServico: GranaService,
+              private roteador: Router) { }
 
   ngOnInit(): void {
-    this.roteador.params.subscribe(parametros => {
+    this.roteadorAtivo.params.subscribe(parametros => {
       if(parametros['grana_id'] !== undefined){
       this.granaServico.buscarGranaPorId(parametros['grana_id']).subscribe(response => {
         this.grana = response
@@ -40,6 +40,10 @@ export class VisualizarGranaComponent implements OnInit {
       console.log(error)
     })
   }})
+  }
+
+  editarGrana(){
+    this.roteador.navigate(['/editarGrana', { grana: this.grana }])
   }
 
   preencherColunas() {
