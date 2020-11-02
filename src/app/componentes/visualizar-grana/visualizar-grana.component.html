@@ -2,6 +2,11 @@
     <div class="titulo-grana">
         <h1>{{grana?.nome}}</h1>
     </div>
+    <div>
+        <button mat-mini-fab class="editar" color="primary" (click)="editarGrana()">
+            <mat-icon>edit</mat-icon>
+        </button>
+    </div>
 
     <mat-table [dataSource]="gastos" class="mat-elevation-z8 tabela-grana">
 

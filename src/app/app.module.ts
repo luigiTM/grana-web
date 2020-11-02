@@ -28,7 +28,9 @@ import { NovoGranaComponent } from './componentes/novo-grana/novo-grana.componen
 import { VisualizarGranaComponent } from './componentes/visualizar-grana/visualizar-grana.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BarraInferiorComponent } from './componentes/barra-inferior/barra-inferior.component';
-import {MatTableModule} from '@angular/material/table'; 
+import {MatTableModule} from '@angular/material/table';
+import { EditarGranaComponent } from './componentes/editar-grana/editar-grana.component';
+import { EsqueciSenhaComponent } from './componentes/esqueci-senha/esqueci-senha.component'; 
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import {MatTableModule} from '@angular/material/table';
     PerfilComponent,
     NovoGranaComponent,
     VisualizarGranaComponent,
-    BarraInferiorComponent
+    BarraInferiorComponent,
+    EditarGranaComponent,
+    EsqueciSenhaComponent
   ],
   imports: [
     BrowserModule,
@@ -82,6 +86,12 @@ import {MatTableModule} from '@angular/material/table';
       },{
         path: 'visualizarGrana',
         component: VisualizarGranaComponent
+      },{
+        path: 'editarGrana',
+        component: EditarGranaComponent
+      },{
+        path: 'esqueciSenha',
+        component: EsqueciSenhaComponent
       }
     ])
   ],
