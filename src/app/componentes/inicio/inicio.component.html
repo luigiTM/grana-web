@@ -6,6 +6,9 @@
         <mat-list-option *ngFor="let grana of granas" (click)='visualizarGrana(grana.id)'>
             <div mat-line> {{grana.nome}} </div>
             <div mat-line> {{grana.modificadoEm}} </div>
+            <button mat-mini-fab class="opcoes">
+                <mat-icon>more_vert</mat-icon>
+            </button>
         </mat-list-option>
     </mat-selection-list>
 </div>
